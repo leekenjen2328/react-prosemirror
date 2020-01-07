@@ -11,7 +11,7 @@ class Editor extends React.Component {
     this.editorRef = React.createRef()
 
     this.view = new EditorView(null, {
-      state: EditorState.create(props.options),
+      state: this.props.state,
       dispatchTransaction: transaction => {
         const { state, transactions } = this.view.state.applyTransaction(transaction)
 
